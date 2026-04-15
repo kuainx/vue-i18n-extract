@@ -1,17 +1,16 @@
 import { md5 } from 'js-md5'
 
-export interface I18nEntry {
+export type I18nEntry<LangList extends string> = {
   id: string
   meta?: {
     source?: string
     deprecated?: boolean
-    [key: string]: any
-  }
-  [lang: string]: any
-}
+  } & Record<string, any>
+} & Record<LangList, string>
 
-export type I18nDict = Record<string, I18nEntry>
+export type I18nDict<LangList extends string> = Record<string, I18nEntry<LangList>>
 
 export function generateId(str: string): string {
+  console.log(str)
   return md5(str).slice(0, 8)
 }
