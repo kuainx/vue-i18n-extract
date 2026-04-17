@@ -55,7 +55,7 @@ export default function vueI18nExtractPlugin(options: I18nExtractOptions = {}): 
     if (!fs.existsSync(path.dirname(exportPath))) {
       fs.mkdirSync(path.dirname(exportPath), { recursive: true })
     }
-    fs.writeFileSync(exportPath, JSON.stringify(dict, null, 2), 'utf8')
+    fs.writeFileSync(exportPath, JSON.stringify(dict, null, 2) + '\n', 'utf8')
 
     const dtsPath = path.resolve(path.dirname(exportPath), 'i18n.d.ts')
     const langType = langList.map((lang) => `'${lang}'`).join(' | ')
