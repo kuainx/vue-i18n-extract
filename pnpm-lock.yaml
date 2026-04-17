@@ -4,12 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-catalogs:
-  default:
-    vite:
-      specifier: npm:@voidzero-dev/vite-plus-core@^0.1.16
-      version: 0.1.16
-
 overrides:
   vite: npm:@voidzero-dev/vite-plus-core@^0.1.16
   vitest: npm:@voidzero-dev/vite-plus-test@latest
@@ -22,15 +16,15 @@ importers:
         specifier: ^0.8.3
         version: 0.8.3
       vite:
-        specifier: 'catalog:'
+        specifier: npm:@voidzero-dev/vite-plus-core@^0.1.16
         version: '@voidzero-dev/vite-plus-core@0.1.16(@types/node@25.6.0)(@vitejs/devtools@0.1.14)(jiti@2.6.1)(publint@0.3.18)(typescript@6.0.3)(yaml@2.8.3)'
     devDependencies:
       '@oxc-project/types':
         specifier: 0.123.0
         version: 0.123.0
       '@standard-config/oxlint':
-        specifier: 1.6.2
-        version: 1.6.2(oxlint-tsgolint@0.20.0)(oxlint@1.60.0(oxlint-tsgolint@0.20.0))
+        specifier: 1.8.0
+        version: 1.8.0(oxlint-tsgolint@0.20.0)(oxlint@1.60.0(oxlint-tsgolint@0.20.0))
       '@types/node':
         specifier: ^25.6.0
         version: 25.6.0
@@ -597,12 +591,12 @@ packages:
   '@rolldown/debug@1.0.0-rc.16':
     resolution: {integrity: sha512-titF/ZuuhX4hg0eP04iuVNX/9+YV40k9laG68niMawfVssl12X2s5iVQLWP/vjrnPTDgFESzrJzNEw84IAj+Nw==}
 
-  '@standard-config/oxlint@1.6.2':
-    resolution: {integrity: sha512-HNCw68uS0Xe/K2jC0Ra8Il194T8grJNXy6gMlUZzYkVfdMiiuUogM3ap/mV/4j3FRmNNutCSef9y4cwzzjTGIQ==}
+  '@standard-config/oxlint@1.8.0':
+    resolution: {integrity: sha512-Krv30kAF4n/0nUztUh/qbi2cTcp8CFVmdJxSs9UMrrFlNgCY5lS7k941vxQ746Ieb0zikWTwA42u37WW/W1cWQ==}
     engines: {node: '>=20'}
     peerDependencies:
-      oxlint: '>=1.52.0'
-      oxlint-tsgolint: '>=0.16.0'
+      oxlint: ^1.60.0
+      oxlint-tsgolint: ^0.18.0
     peerDependenciesMeta:
       oxlint-tsgolint:
         optional: true
@@ -1914,7 +1908,7 @@ snapshots:
 
   '@rolldown/debug@1.0.0-rc.16': {}
 
-  '@standard-config/oxlint@1.6.2(oxlint-tsgolint@0.20.0)(oxlint@1.60.0(oxlint-tsgolint@0.20.0))':
+  '@standard-config/oxlint@1.8.0(oxlint-tsgolint@0.20.0)(oxlint@1.60.0(oxlint-tsgolint@0.20.0))':
     dependencies:
       oxlint: 1.60.0(oxlint-tsgolint@0.20.0)
     optionalDependencies:

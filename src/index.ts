@@ -114,7 +114,6 @@ export default function vueI18nExtractPlugin(options: I18nExtractOptions = {}): 
         }
       }
       if (changed) saveDict()
-      return null
     },
     buildEnd() {
       saveDict()
@@ -126,7 +125,13 @@ export default function vueI18nExtractPlugin(options: I18nExtractOptions = {}): 
     },
     load(id) {
       if (id === '\0virtual:vue-i18n-extract-dict') {
-        const code = `export default ${JSON.stringify(dict)}`
+        const exportDict = Object.fromEntries(
+          Object.entries(dict).map(([key, entry]) => {
+            const { meta, ...rest } = entry
+            return [key, rest]
+          }),
+        )
+        const code = `export default ${JSON.stringify(exportDict)}`
         return code
       }
     },

@@ -24,5 +24,7 @@ export default defineConfig({
       },
     ],
     'typescript/consistent-type-definitions': ['error', 'interface'],
+    'typescript/consistent-return': 'off',
+    'typescript/strict-void-return': 'off',
   },
 })
