@@ -1,7 +1,8 @@
 // oxlint-disable jest/no-conditional-in-test
 import { expect, test } from 'vite-plus/test'
 
-import { defineConfig, generateId } from '../src/index.ts'
+import { generateId } from '../src/index.ts'
+import { defineConfig } from '../src/runtime.ts'
 
 test('generateId', () => {
   const id1 = generateId('欢迎$0使用本系统, 现在时间是$1')

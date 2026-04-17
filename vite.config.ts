@@ -5,6 +5,7 @@ export default defineConfig({
   devtools: true,
   plugins: [Inspect()],
   pack: {
+    entry: ['src/index.ts', 'src/runtime.ts'],
     dts: {
       tsgo: true,
     },

@@ -18,7 +18,7 @@ export type TRenderFn<LangList extends string> = (
 ) => string
 
 type TFn = (str: string, ...args: any[]) => string
-export type TFunction<RenderList extends string> = TFn & Record<RenderList, TFn>
+type TFunction<RenderList extends string> = TFn & Record<RenderList, TFn>
 function defaultRenderFn<LangList extends string>(
   cfg: RuntimeConfig<LangList>,
   dat: I18nEntry<LangList>,
@@ -41,7 +41,7 @@ export function defineConfig<LangList extends string>() {
       DICT = mod.default as I18nDict<LangList>
     } catch (error: any) {
       DICT = {}
-      console.warn('i18n-dict module not found', error)
+      console.warn('[i18n-dict] module not found', error)
     }
 
     function processRender(renderFn: TRenderFn<LangList>, str: string, args: any[]): string {

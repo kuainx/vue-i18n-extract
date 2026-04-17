@@ -6,7 +6,6 @@ import type { I18nDict, I18nEntry } from './shared.js'
 import type { Plugin } from 'vite'
 
 export * from './shared.js'
-export * from './runtime.js'
 
 export interface I18nExtractOptions {
   exportFilename?: string
@@ -41,9 +40,9 @@ export default function vueI18nExtractPlugin(options: I18nExtractOptions = {}): 
           dict[key].meta ??= {}
           dict[key].meta.deprecated = true
         }
-        console.log('i18n-dict loaded:', Object.keys(dict).length, 'entries')
+        console.log('[i18n-dict] loaded:', Object.keys(dict).length, 'entries')
       } catch (error) {
-        console.warn('i18n-dict resolve error', error)
+        console.warn('[i18n-dict] resolve error', error)
         dict = {}
       }
     } else {
